@@ -70,9 +70,9 @@ namespace gallnut {
             return;
         }
         if (timer->next != nullptr)
-            timer->next = timer->prev;
+            timer->next->prev = timer->prev;
         if (timer->prev != nullptr)
-            timer->prev = timer->next;
+            timer->prev->next = timer->next;
     }
 
     Timer::ptr Slot::take_one_timer() {
